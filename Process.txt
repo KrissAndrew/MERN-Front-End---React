@@ -27,7 +27,7 @@ Dont forget to include <BrowserRouter> in index.js to use routing functinality
 Now we can set up some of the base level routes as per the design.
 
 
-3. Begin work on individual page components. Build from the simplest forwards. Start with your index page and branch out. 
+3. Begin work on individual page components. Build from the front down. Start with your index page and branch out. 
 What content does the index page contain? Break down and create individual react components for this content.
 
 - main navigation bar, leading to your pre-designated pages
