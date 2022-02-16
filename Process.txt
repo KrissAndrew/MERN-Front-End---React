@@ -1,0 +1,31 @@
+0.1. Note from myself - when setting up a new project like this chucking a standard CSS setup into index is usually a good idea. Helps keep things clean as we work forwards.
+If you have anything particular like fonts you wish to use across the site chuck those in. 
+A js file for color themes can help speed up styling like: 
+
+assets > Colors.js
+const Colors = {
+    main: '#123456',
+    accent: "#654321',
+}
+
+
+1. Usually we begin with a components and pages folder. Max is taking a different approach here as with larger applications this can make finding things difficult.
+Another reminder here for the importance of a design. Projects evolve and change but having an idea, even a simple one helps with getting started and organised. 
+Here we will create some folders based upon functionality. 
+
+In this example we have: 
+- 'places', 'places/components' & 'places/pages'
+- 'users', 'users/components' & 'users/pages'
+- 'shared' & 'shared/components' (contains general purpose files and features)
+
+
+2. Install routing package with 'npm install react-router-dom'. 
+NOTE: Max uses version 5 in his guide, but ill go ahead with the latest (6.2.1 at time of writing) as I want to work with the most recent version. 
+This introduces changes to his process but they are easy to figure out using the documentation.
+
+Dont forget to include <BrowserRouter> in index.js to use routing functinality
+Now we can set up some of the base level routes as per the design.
+
+
+3. Begin work on individual page components. Build from the simplest forwards. Start with your index page and branch out. 
+What content does the index page contain? Break down and create individual react components for this content. 
