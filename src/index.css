@@ -118,6 +118,7 @@ sup {
   align-items: center;
 }
 
+/* Side drawer transition CSS */
 .slide-in-left-enter {
   transform: translateX(-100%);
 }
