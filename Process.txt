@@ -32,3 +32,7 @@ What content does the index page contain? Break down and create individual react
 
 - main navigation bar, leading to your pre-designated pages
 - Content for home page
+
+4. As we build this application the approach differs from a pure react app in that we do not bother creating efficiant information sharing through context or Redux
+as we plan to utilise a database via a server. This means we should aim to just use dummy placeholder values as we create the frontend whilst keeping in mind
+the database functionality we plan to use in the future. 
