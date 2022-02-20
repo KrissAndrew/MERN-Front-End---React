@@ -66,6 +66,7 @@ const NewPlace = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     // here we will add backend server logic
+    console.log(formState.inputs);
   };
 
   return (
@@ -84,6 +85,13 @@ const NewPlace = () => {
         label="Description"
         validators={[VALIDATOR_MINLENGTH(15)]}
         errorText="Descriptions must be a minimum of 15 characters long"
+        onInput={inputHandler}
+      />
+      <Input
+        id="address"
+        label="Address"
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText="Please enter a valid address"
         onInput={inputHandler}
       />
       <Button type="submit" disabled={!formState.isValid}>
