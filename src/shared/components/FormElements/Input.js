@@ -28,8 +28,8 @@ const Input = (props) => {
   // returns 2 elements, current state and a dispatch function
   // dispatch function called, updates the state - rerenders the component
   const [inputState, dispatch] = useReducer(inputReducer, {
-    value: "",
-    isValid: false,
+    value: props.initialValue || "",
+    isValid: props.initialValidity || false,
     isTouched: false,
   });
 
