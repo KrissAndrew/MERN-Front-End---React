@@ -18,7 +18,6 @@ const App = () => {
           <Route path="/places/new" element={<NewPlace />} />
           <Route path="/places/:placeId" element={<UpdatePlace />} />
           <Route path="/auth" element={<Auth />} />
-
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>

@@ -1,56 +1,23 @@
-import Input from "../../shared/components/FormElements/Input";
-import Button from "../../shared/components/FormElements/Button";
+import { useState } from "react";
 
-import { useForm } from "../../shared/hooks/form-hook";
-import {
-  VALIDATOR_EMAIL,
-  VALIDATOR_MINLENGTH,
-} from "../../shared/util/validators";
-
+import SignInForm from "../components/SignInForm";
 import classes from "./AuthForm.module.css";
+import Card from "../../shared/components/UIElements/Card";
+import SignUpForm from "../components/SignUpForm";
 
 const Auth = () => {
-  const [formState, inputHandler] = useForm(
-    {
-      email: {
-        value: "",
-        isValid: false,
-      },
-      password: {
-        value: "",
-        isValid: false,
-      },
-    },
-    false
-  );
+  // state to swap from signin to sign up form
+  const [showSignup, setShowSignup] = useState(false);
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-    // here we will add backend server logic
-    console.log("Logging in");
+  const showSignupHandler = () => {
+    setShowSignup(!showSignup);
   };
 
-  return (
-    <form className={classes.authForm} onSubmit={submitHandler}>
-      <Input
-        id="email"
-        label="Email"
-        validators={[VALIDATOR_EMAIL()]}
-        errorText="Please enter a valid title"
-        onInput={inputHandler}
-      />
-      <Input
-        id="password"
-        label="Password"
-        validators={[VALIDATOR_MINLENGTH(5)]}
-        errorText="Password must be a minimum of 5 characters long"
-        onInput={inputHandler}
-      />
-      <Button type="submit" disabled={!formState.isValid}>
-        Login
-      </Button>
-    </form>
-  );
+  let content = <SignInForm onSignUp={showSignupHandler} />;
+
+  if (showSignup) content = <SignUpForm onSignIn={showSignupHandler} />;
+
+  return <Card className={classes.auth}>{content}</Card>;
 };
 
 export default Auth;
